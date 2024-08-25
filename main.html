@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klook Taipei 101 Observatory Ticket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqk1w2/knoG80kdk37i27WSgShJp7tpIVWpqxc9Lfcf+R/L61wsB+dDqL+LhOECvJ8q0o+6c=" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav li {
+            margin-right: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .main-image {
+            width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            margin-bottom: 20px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .rating i {
+            color: #ffc107;
+        }
+
+        .reviews {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .booked {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .location {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .wishlist {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wishlist i {
+            color: #666;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .wishlist:hover i {
+            color: #333;
+        }
+
+        /* Options and Dates - Additional Styling */
+        .options, .dates {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .option, .date {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .option.active, .date.active {
+            background-color: #f2f2f2;
+        }
+
+        /* Ticket Section - Additional Styling */
+        .ticket {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .ticket-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .ticket-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ticket-details {
+            margin-bottom: 10px;
+        }
+
+        .ticket-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ticket-details li {
+            margin-bottom: 5px;
+        }
+
+        .ticket-price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .ticket-button {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <i class="fa fa-star"></i> Klook
+        </div>
+        <ul class="nav">
+            <li><a href="#">PHP</a></li>
+            <li><a href="#">Go to app</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Recently viewed</a></li>
+            <li><a href="#" class="button">Sign up</a></li>
+            <li><a href="#" class="button">Log in</a></li>
+        </ul>
+    </div>
+    <div class="title">
+        Taipei 101 Observatory Ticket
+    </div>
+    <div class="breadcrumb">
+        <a href="#">Klook Travel</a> > <a href="#">Taiwan</a> > <a href="#">Taipei</a>
+    </div>
+    <div class="content">
+        <div class="image-container">
+            <img src="/Users/sample/Downloads/Screenshot 2024-08-24 at 7.19.18 PM" alt="Taipei 101" class="main-image">
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1583278798168-018d02f9e831?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Taipei 101" class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1583278798168-018d02f9e831?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Taipei 101" class="gallery-item">
+                <button class="button">Gallery</button>
+            </div>
+        </div>
+        <div class="details">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+                <span class="reviews">(35K+ reviews)</span>
+            </div>
+            <div class="booked">
+                <i class="fa fa-check-circle"></i>
+                <span>1M+ booked</span>
+            </div>
+            <div class="location">
+                <i class="fa fa-map-marker-alt"></i>
+                <span>89F.,No. 7, Sec. 5, Xinyi Rd., Xinyi Dist., Taipei City (Enter from the 5th floor ...</span>
+            </div>
+            <div class="description">
+                The outdoor observation deck on the 91th floor is the sky grassland picnic site, and you can enjoy a relaxing "Sky Tour" at an altitude of 400 meters above sea level
+            </div>
+        </div>
+        <div class="price">
+            P 1,058
+        </div>
+        <button class="button">Select options</button>
+        <div class="wishlist">
+            <i class="fa fa-heart"></i>
+            <span>Save to wishlist</span>
+        </div>
+    </div>
+    <div class="options">
+        <div class="option active" id="standard">Standard</div>
+        <div class="option" id="combo">Combo deals</div>
+    </div>
+    <div class="dates">
+        <div class="date active" id="today">Today</div>
+        <div class="date" id="tomorrow">Tomorrow</div>
+        <div class="date" id="26aug">26 Aug</div>
+        <div class="date" id="alldates">All dates</div>
+    </div>
+    <div class="ticket" id="ticket-89f">
+        <div class="ticket-header">
+            <h2 class="ticket-title">89F Observatory Ticket</h2>
+            <span class="ticket-discount">5% off</span>
+        </div>
+        <div class="ticket-info">
+            <div class="ticket-details">
+                <ul>
+                    <li>Free cancellation (24-hours notice)</li>
+                    <li>Instant confirmation</li>
+                    <li>Valid on the selected date</li>
+                </ul>
+            </div>
+            <div class="ticket-price">
+                P 1,058
+            </div>
+        </div>
+        <button class="ticket-button">Select</button>
+    </div>
+    <div class="ticket" id="ticket-89f-101f">
+        <div class="ticket-header">
+            <h2 class="ticket-title">89F + 101F Observatory Ticket</h2>
+            <span class="ticket-discount">5% off</span>
+        </div>
+        <div class="ticket-info">
+            <div class="ticket-details">
+                <ul>
+                    <li>Free cancellation (24-hours notice)</li>
+                    <li>Instant confirmation</li>
+                    <li>Valid on the selected date</li>
+                </ul>
+            </div>
+            <div class="ticket-price">
+                P 1,689
+                <small>P 1,728</small>
+            </div>
+        </div>
+        <button class="ticket-button">Select</button>
+    </div>
+</div>
+<script>
+    const options = document.querySelectorAll('.option');
+    const dates = document.querySelectorAll('.date');
+    const ticket89f = document.getElementById('ticket-89f');
+    const ticket89f101f = document.getElementById('ticket-89f-101f');
+
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            options.forEach(o => o.classList.remove('active'));
+            option.classList.add('active');
+
+            if (option.id === 'standard') {
+                ticket89f.style.display = 'block';
+                ticket89f101f.style.display = 'none';
+            } else if (option.id === 'combo') {
+                ticket89f.style.display = 'none';
+                ticket89f101f.style.display = 'block';
+            }
+        });
+    });
+
+    dates.forEach(date => {
+        date.addEventListener('click', () => {
+            dates.forEach(d => d.classList.remove('active'));
+            date.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
