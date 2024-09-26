@@ -1,7 +1,7 @@
-<div class="title">
+<!-- <div class="title">
     Taipei 101 Observatory Ticket
-</div>
-<div class="breadcrumb">
+</div> -->
+<div class="breadcrumb mt-1">
     <a href="#">Klook Travel</a> > <a href="#">Taiwan</a> > <a href="#">Taipei</a>
 </div>
 <div class="content">

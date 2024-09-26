@@ -14,9 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
+
 }
 
 .logo {
@@ -49,7 +47,7 @@ body {
 }
 
 .breadcrumb {
-    margin-bottom: 20px;
+    margin-top: 20px;
     font-size: 14px;
     color: #666;
 }
