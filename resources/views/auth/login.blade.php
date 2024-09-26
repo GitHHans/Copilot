@@ -2,22 +2,21 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <img src="/assets/images/plane_icon.png" alt="Airplane Icon" id="plane-icon" class="airplane-icon" />
+
     <form method="POST" action="{{ route('login') }}" >
         @csrf
 
-       
-        
         <!-- Title -->
         <div class="text-center custom-font">
-            <img src="/assets/images/plane_icon.png" alt="Airplane Icon" class="airplane-icon" />
-            <x-login-signup-label for="title" :value="__('WELCOME BACK')"/>
+            <x-login-signup-label for="title" :value="__('WELCOME BACK!')"/>
         </div>
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-label for="username" :value="__('Username')" />
+            <x-text-input id="username" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('username')" class="mt-2" />
         </div>
 
         <!-- Password -->
@@ -49,7 +48,7 @@
 
         <!-- Log in Button -->
         <div class="flex flex-col items-center text-center mt-4">
-            <x-primary-button class="center-text ms-3 px-6 py-3 w-3/4">
+            <x-primary-button id="login-button" class="center-text ms-3 px-6 py-3 w-3/4 mt-4">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
@@ -59,7 +58,7 @@
             <label for="new-register" class="inline-flex items-center">
                 <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('NEW TO COPILOT?') }}</span>
             </label>
-            <a href="{{ route('register') }}" class="underline text-xs">SIGN UP</a>
+            <a href="{{ route('register') }}" id="signup-link" class="underline text-xs">SIGN UP</a>
         </div>
     </form>
 </x-guest-layout>

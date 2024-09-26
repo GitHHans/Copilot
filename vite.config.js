@@ -7,7 +7,10 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/handle_login.js',
+                
             ],
+            buildDirectory: 'build', // Change this if you want a different directory
             refresh: true,
         }),
     ],
