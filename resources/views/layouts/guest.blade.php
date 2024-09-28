@@ -55,7 +55,7 @@
 
              /* 6214503_air_airplane_logo_paper_plane_icon 1 */
 
-            .airplane-icon{
+            .airplane-icon {
                 position: absolute;
                 z-index: 10;
                 bottom: 0;
@@ -65,7 +65,12 @@
                 transform: translate(-50%, 50%);
                 transition: transform 2s linear;
             }
-            
+
+            .pplink-icon {
+                transition: transform 0.5s linear;
+            }
+        
+
         </style>
 
     </head>
@@ -81,7 +86,13 @@
                 {{ $slot }}
             </div>
         </div>
-    </body>
 
-    <script link=""></script>
+        <script>
+            window.Laravel = {
+                routes: {
+                    register: "{{ route('register') }}"
+                }
+            };
+        </script>
+    </body>
 </html>
